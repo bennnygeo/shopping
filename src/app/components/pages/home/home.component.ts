@@ -3,12 +3,14 @@ import { Food } from '../../../shared/modal/food';
 import { FoodService } from '../../../services/food.service';
 import { CommonModule } from '@angular/common';
 import { StarRatingConfigService, StarRatingModule } from 'angular-star-rating';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { SearchComponent } from '../../partials/search/search.component';
+import { TagsComponent } from '../../partials/tags/tags.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, StarRatingModule],
+  imports: [CommonModule, StarRatingModule, SearchComponent, TagsComponent, RouterModule],
   providers: [StarRatingConfigService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -21,7 +23,10 @@ export class HomeComponent {
     this.activatedRoute.params.subscribe(params => {
       if (params?.searchTerm) {
         this.foods = this.foodService.getFoodsBySearchTerm(params.searchTerm);
-      }else{
+
+      } else if (params.tag) {
+        this.foods = this.foodService.getAllFoodsByTag(params.tag);
+      } else {
         this.foods = this.foodService.getAll();
       }
     })

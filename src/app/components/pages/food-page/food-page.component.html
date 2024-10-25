@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="img-cont">
+        <div>
+            <img [src]="food.imageUrl" [alt]="food.name">
+        </div>
+
+        <div class="details">
+            <div class="header">
+                <span class="name">{{food.name}}</span>
+                <span [ngClass]="['favorite', food.favorite ? '' : 'not']">❤</span>
+            </div>
+
+        </div>
+
+        <div class="stars">
+            <star-rating [rating]=food.stars class="rating"></star-rating>
+        </div>
+    </div>
+
+
+
+    <div class="product-item-footer">
+        <div class="origins">
+            @for(origin of food.origins; track origin; let first =$first){
+            <span class="list">{{origin}}</span>
+            }
+        </div>
+
+        <div class="cook-time">
+            <span>🕐</span>
+            <span>{{food.cookTime}} mins</span>
+        </div>
+
+        <div class="price">
+            <span>
+                {{food.price | currency:"₹"}}
+            </span>
+        </div>
+
+        <button class="addBtn" (click)="addToCartAction(food)">Add to Cart</button>
+    </div>
+</div>
