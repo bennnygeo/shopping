@@ -1,1 +1,4 @@
-<p>search works!</p>
+<div class="serach-cont">
+    <input type="text" #search placeholder="Search Foods!" (keyup.enter)="searchAction(search.value)" [value]="searchTerm">
+    <button (click)="searchAction(search.value)">⌕</button>
+</div>

@@ -3,22 +3,27 @@
 
 @import 'css-star-rating/scss/star-rating';
 
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 16px;
 }
 
-html, button{
-    font-family: "Quicksand","sans-serif";
+html,
+button {
+    font-family: "Quicksand", "sans-serif";
 }
 
-body{
+body {
     margin: 0;
 }
 
-a{
+a {
     text-decoration: none;
+}
+
+.rating {
+    justify-content: left !important;
 }

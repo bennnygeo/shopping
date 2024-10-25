@@ -1,6 +1,8 @@
+<app-search></app-search>
+<app-tags></app-tags>
 <ul>
     @for (food of foods; track food.id) {
-    <li>
+    <li  routerLink="/food/{{food.id}}">
         <div class="image-cont"> <img class="image-item" [src]="food.imageUrl" alt="food.name"></div>
 
         <div class="content">
@@ -8,7 +10,7 @@
 
             <span [ngClass]="['favorite', food.favorite ? '' : 'not']">❤</span>
             <div class="stars">
-                <star-rating [rating]="4" class="rating"></star-rating>
+                <star-rating [rating]=food.stars class="rating"></star-rating>
             </div>
 
             <div class="product-item-footer">

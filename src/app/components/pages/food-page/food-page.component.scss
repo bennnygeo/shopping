@@ -1,0 +1,78 @@
+.container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+
+    img {
+        width: 300px;
+        border-radius: 0.6rem;
+    }
+
+    .header {
+        margin: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+
+        .name {
+            position: relative;
+        }
+
+        .favorite {
+            color: #c00;
+        }
+
+        .favorite.not {
+            color: #ddd;
+        }
+
+        .stars {
+            padding: 12px 0 6px 0;
+        }
+    }
+
+    .product-item-footer {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-left: 1rem;
+
+        .origins {
+            .list {
+                font-size: 0.7rem;
+                background-color: #efefef;
+                border: 1px solid #ddd;
+                border-radius: 0.3rem;
+                padding: 0 0.3rem 0 0.3rem;
+                margin-right: 0.3rem;
+            }
+
+            margin-bottom: 0.6rem;
+        }
+    }
+
+    .cook-time {
+        margin-bottom: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .price {
+        margin-bottom: 0.6rem;
+        font-weight: bold;
+    }
+
+    .addBtn {
+        padding: 0.6rem;
+        background-color: #A00;
+        color: white;
+        outline: none;
+        border: none;
+        border-radius: 0.3rem;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

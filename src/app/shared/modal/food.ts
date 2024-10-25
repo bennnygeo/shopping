@@ -9,3 +9,8 @@ export class Food {
     origins!: string[];
     cookTime!: string;
 }
+
+export class Tag {
+    name!: string;
+    count!: number;
+}
