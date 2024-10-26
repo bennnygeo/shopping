@@ -1,9 +1,11 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found [visible]="!foods ||!foods.length" resetLinkText="Reset Search"></app-not-found>
 <ul>
     @for (food of foods; track food.id) {
-    <li  routerLink="/food/{{food.id}}">
-        <div class="image-cont"> <img class="image-item" [src]="food.imageUrl" alt="food.name"></div>
+    <li>
+        <div class="image-cont" routerLink="/food/{{food.id}}"> <img class="image-item" [src]="food.imageUrl"
+                alt="food.name"></div>
 
         <div class="content">
             <div class="name">{{food.name}}</div>
