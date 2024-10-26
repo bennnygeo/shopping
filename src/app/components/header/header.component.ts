@@ -6,13 +6,16 @@ import { CartService } from '../../services/cart.service';
   selector: 'app-header',
   standalone: true,
   imports: [RouterModule],
-  providers: [CartService],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
-  constructor(cartService: CartService) {
+  cartQuantity: number = 0;
 
+  constructor(public cartService: CartService) {
+    this.cartService.getCartObservable().subscribe((cart:any) => {
+      this.cartQuantity = cart.totalCount;
+    });
   }
 }

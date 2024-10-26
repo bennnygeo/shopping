@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cart } from '../shared/modal/cart';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Food } from '../shared/modal/food';
 import { CartItem } from '../shared/modal/cart-item';
 
@@ -13,7 +13,6 @@ export class CartService {
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
 
   constructor() {
-
   }
 
   addToCart(food: Food): void {
@@ -38,7 +37,7 @@ export class CartService {
     this.setCartToLocalStorage();
   }
 
-clearCart() {
+  clearCart() {
     this.cart = new Cart();
     this.setCartToLocalStorage();
   }

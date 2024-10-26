@@ -15,9 +15,9 @@ li {
     flex-grow: 1;
     overflow: hidden;
     color: black;
-    cursor: pointer;
 
     .image-cont {
+        cursor: pointer;
         .image-item {
             width: 160px;
             display: flex;

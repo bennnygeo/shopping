@@ -6,11 +6,12 @@ import { StarRatingConfigService, StarRatingModule } from 'angular-star-rating';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { SearchComponent } from '../../partials/search/search.component';
 import { TagsComponent } from '../../partials/tags/tags.component';
+import { NotFoundComponent } from '../../partials/not-found/not-found.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, StarRatingModule, SearchComponent, TagsComponent, RouterModule],
+  imports: [CommonModule, StarRatingModule, SearchComponent, TagsComponent, RouterModule, NotFoundComponent],
   providers: [StarRatingConfigService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
