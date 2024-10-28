@@ -1,4 +1,4 @@
-@if(food.id){
+@if(food){
 <div class="container">
     <div class="img-cont">
         <div>
@@ -41,5 +41,5 @@
 </div>
 }
 @else{
-<app-not-found [visible]="!food.id" notFoundMessage="Food not Found!" resetLinkText="Back to homepage"></app-not-found>
+<app-not-found [visible]="!food" notFoundMessage="Food not Found!" resetLinkText="Back to homepage"></app-not-found>
 }
